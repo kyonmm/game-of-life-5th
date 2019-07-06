@@ -3,12 +3,60 @@
  */
 package game.of.life;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class LibraryTest {
-    @Test public void testSomeLibraryMethod() {
-        Library classUnderTest = new Library();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
-    }
+  @Test void someTest(){
+    Field f = new Field(5,5);
+    assertEquals(f.get(0,0), false);
+    assertEquals(f.get(1,0), false);
+    assertEquals(f.get(2,0), false);
+    assertEquals(f.get(3,0), false);
+    assertEquals(f.get(4,0), false);
+
+    assertEquals(f.get(0,1), false);
+    assertEquals(f.get(1,1), false);
+    assertEquals(f.get(2,1), false);
+    assertEquals(f.get(3,1), false);
+    assertEquals(f.get(4,1), false);
+
+    assertEquals(f.get(0,2), false);
+    assertEquals(f.get(1,2), true);
+    assertEquals(f.get(2,2), true);
+    assertEquals(f.get(3,2), true);
+    assertEquals(f.get(4,2), false);
+  }
+  @Test void Testme(){
+    Field f = new Field(5,5);
+  f.time(1);
+
+    assertEquals(f.get(0,0), false);
+    assertEquals(f.get(1,0), false);
+    assertEquals(f.get(2,0), false);
+    assertEquals(f.get(3,0), false);
+    assertEquals(f.get(4,0), false);
+
+    assertEquals(f.get(0,1), false);
+    assertEquals(f.get(1,1), false);
+    assertEquals(f.get(2,1), true);
+    assertEquals(f.get(3,1), false);
+    assertEquals(f.get(4,1), false);
+
+    assertEquals(f.get(0,2), false);
+    assertEquals(f.get(1,2), false);
+    assertEquals(f.get(2,2), true);
+    assertEquals(f.get(3,2), false);
+    assertEquals(f.get(4,2), false);
+
+    assertEquals(f.get(0,3), false);
+    assertEquals(f.get(1,3), false);
+    assertEquals(f.get(2,3), true);
+    assertEquals(f.get(3,3), false);
+    assertEquals(f.get(4,3), false);
+  }
+
 }
